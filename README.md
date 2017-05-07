@@ -20,7 +20,7 @@ The script will run one encoding process per directory specified, e.g., if you
 specify one directory only one encode process will run at a time; if you specify
 five directories, five encoding processes will run simultaneously in parallel.
 
-File extensions matched for transcoding operation:
+### File extensions matched for transcoding operation:
 
 * .avi
 
@@ -36,7 +36,7 @@ File extensions matched for transcoding operation:
 
 If *x265* is present in the filename, the file is skipped.
 
-Important notes:
+### Important notes:
 
 * The libx265 encoder process typically uses between 7 and 12 threads in
 parallel.
@@ -74,7 +74,7 @@ possibly transcode the audio, and containerize to MP4, at at least 30 fps.
 the source file_** (n.b., remove the `&& \ rm "$name"` part of the script,
 leaving in place the final `)`, if you do not desire this action).
 
-Requirements:
+### Requirements:
 
 * ffmpeg
 
@@ -86,7 +86,7 @@ Requirements:
 
 * A powerful computer, or patience (or both!)
 
-Usage:
+### Usage:
 
 * `./script.sh ["directory"] [...]`
 
@@ -102,3 +102,7 @@ Test version that echoes filenames to the console instead of performing any
 action, `test-convert-to-x265.sh`.
 
 Non-test version, `convert-to-x265.sh`.
+
+### License:
+
+Licensed under **BSD-3-Clause**, the *Modified BSD License*.

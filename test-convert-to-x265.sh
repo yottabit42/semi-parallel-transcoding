@@ -9,6 +9,8 @@
 #
 # Jacob McDonald
 # Revision 170504a-yottabit
+#
+# Licensed under BSD-3-Clause, the Modified BSD License
 
 IFS="$(printf '\n\t')"
 
