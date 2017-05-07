@@ -88,7 +88,7 @@ leaving in place the final `)`, if you do not desire this action).
 
 ### Usage:
 
-* `./script.sh ["directory"] [...]`
+* `./convert-to-x265.sh ["directory"] [...]`
 
 * Directories with spaces in the name must be quoted or escaped, per usual shell
  usage
@@ -99,9 +99,9 @@ leaving in place the final `)`, if you do not desire this action).
 active console session
 
 Test version that echoes filenames to the console instead of performing any
-action, `test-convert-to-x265.sh`.
+action: `test-convert-to-x265.sh`.
 
-Non-test version, `convert-to-x265.sh`.
+Non-test version: `convert-to-x265.sh`.
 
 ### License:
 
