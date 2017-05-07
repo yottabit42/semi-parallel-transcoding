@@ -7,12 +7,15 @@ by Jacob McDonald
 ## Semi-Parallelized Transcoding to h.265/hevc
 
 The newer h.265/hevc CODEC can save between 50% to 75% of media storage space
-for the same visual quality. Here is a fun script that takes command-line
+for the same visual quality.
+
+Here is a fun script that takes command-line
 arguments as directories and parallelizes transcoding of media within those
-directories to an h.265/hevc-encoded Matroska (mkv) file with *.x265. *inserted
+directories to an h.265/hevc-encoded Matroska (mkv) file with `.x265.` inserted
 into the filename, and then if the transcode operation was successful **_will
-delete the source file_** (n.b., remove the **&& \ rm "$name"** part of the
-script, leaving in place the final '**)**', if you do not desire this action).
+delete the source file_** (n.b., remove the `&& \ rm "$name"` part of the
+script, leaving in place the final `)`, if you do not desire this action).
+
 The script will run one encoding process per directory specified, e.g., if you
 specify one directory only one encode process will run at a time; if you specify
 five directories, five encoding processes will run simultaneously in parallel.
@@ -42,9 +45,9 @@ parallel.
 transcoding, be careful not to overwhelm your system or it could become
 unresponsive.
 
-* The encoder process is automatically nice’d to 20 (only run when no other
-demand is made on the system), so it’s safe to oversubscribe your CPU threads by
-some margin.
+* The encoder process is automatically nice’d to 20 (idle priority; only run
+when no other demand is made on the system), so it’s safe to oversubscribe your
+CPU threads by some margin.
 
 * As an example, my server uses 16/32 cores/threads Xeon CPU with 64 GB RAM. It
 has performed amazingly well with a nice’d load average of 42+ while bulk
@@ -56,7 +59,7 @@ approximately 33% of original size for a high-quality Blu-Ray 1080p source, and
 I can’t visually tell the difference.
 
 * If the encoder fails, the source file will not be removed. This is performed
-by the **&&** operator.
+by the `&&` operator.
 
 * If planning to stream these new files via Plex, or something similar, ensure
 the system is fast enough to live-transcode the files back to h.264/avc format
@@ -68,8 +71,8 @@ possibly transcode the audio, and containerize to MP4, at at least 30 fps.
 (n.b., if you have a slow server, don’t even think about it.)
 
 * **_Worth repeating:_** if the transcode operation is successful **_will delete
-the source file_** (n.b., remove the **&& \ rm ****"$name"** part of the script,
-leaving in place the final '**)**', if you do not desire this action).
+the source file_** (n.b., remove the `&& \ rm "$name"` part of the script,
+leaving in place the final `)`, if you do not desire this action).
 
 Requirements:
 
@@ -92,7 +95,7 @@ Usage:
 
 * Running with no arguments will exit
 
-* Recommend running in tmux to remain running in the background without an
+* Recommend running in `tmux` to remain running in the background without an
 active console session
 
 Test version that echoes filenames to the console instead of performing any
